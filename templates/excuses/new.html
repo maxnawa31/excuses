@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<form method="POST" action="{{url_for('excuses_index', id = id)}}">
+    <input type="text" name="content" placeholder = "add content">
+    <input type="text" name="is_believable" placeholder = "is it true?">
+    <input type="submit" value="Add Excuse!">
+</form>
+
+{% endblock %}

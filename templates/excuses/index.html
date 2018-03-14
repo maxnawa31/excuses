@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{student.first_name}} {{student.last_name}}</h1>
+<ul>
+{% for excuse in excuses %}
+<li><a href = "{{url_for('edit_excuse', id = student.id, excuse_id = excuse.id)}}">{{excuse.content}}</a></li>
+    {% endfor %}
+    
+</ul>
+<a href="{{url_for('new_excuse', id = student.id)}}">Add a new excuse</a>
+<a href="{{url_for('index')}}">See All Students</a>
+{% endblock %}
